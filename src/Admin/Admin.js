@@ -12,11 +12,10 @@ function Admin() {
 
   function onSubmit(data) {
     console.log(data);
-    // axios
-    //   .post('http://localhost:8080/formdata', data) // Removed the unnecessary nested object
-    //   .then((result) => {
-    //     console.log(result.data);
-    //   });
+    axios.post('http://localhost:8080/admin', {data}) 
+      .then((result) => {
+        console.log(result.data);
+      });
   }
 
   return (
@@ -41,35 +40,52 @@ function Admin() {
           {errors.aadharNo && <p role="alert">Aadhar No is required</p>}
 
           <label>Game</label>
-          <input
-            type="text"
-            placeholder="Enter Game."
-            {...register('game', { required: true })}
-          />
+          <select
+                    {...register('game', { required: true })}
+                    >
+                        <option>Select Game</option>
+                        <option>Kabaddi</option>
+                        <option>Hockey</option>
+                        <option>Badminton</option>
+                        <option>Cricket</option>
+                    </select>
+
+         
           {errors.game && <p role="alert">Game is required</p>}
 
           <label>Age Group</label>
-          <input
-            type="text"
-            placeholder="Enter Age Group."
-            {...register('ageGroup', { required: true })}
-          />
+          <select   placeholder="Enter Age Group."
+            {...register('ageGroup', { required: true })}>
+                    <option>Select Age Group</option>
+                    <option>Juinor</option>
+                    <option>Senior</option>
+                    </select>
+
+         
           {errors.ageGroup && <p role="alert">Age Group is required</p>}
 
           <label>Position</label>
-          <input
-            type="text"
-            placeholder="Enter Position."
-            {...register('position', { required: true })}
-          />
+          <select   placeholder="Enter Position."
+            {...register('position', { required: true })}  >
+                    <option>Select Position</option>
+                        <option>Qualified</option>
+                        <option> 1ND Sliver</option>
+                        <option>2ND Sliver</option>
+                        <option>3ND Sliver</option>
+                    </select>
+
           {errors.position && <p role="alert">Position is required</p>}
 
           <label>State</label>
-          <input
-            type="text"
-            placeholder="Enter State Name."
-            {...register('state', { required: true })}
-          />
+          <select placeholder="Enter State Name."
+            {...register('state', { required: true })}>
+                    <option>Select State</option>
+                        <option>Rajasthan</option>
+                        <option> Punjab</option>
+                        <option>Utter pradesh</option>
+                        <option>Obisha</option>
+                    </select>
+          
           {errors.state && <p role="alert">State is required</p>}
 
           <label>Tournament Name</label>
