@@ -12,6 +12,8 @@ function Admin() {
 
   function onSubmit(data) {
     console.log(data);
+    
+  // e.preventDefault()
     axios.post('http://localhost:8080/admin', {data}) 
       .then((result) => {
         console.log(result.data);
