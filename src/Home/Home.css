@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.home{
+    
+background: linear-gradient(to right, #636FA4, #E8CBC0); 
+padding: 50px 0px;
+}
+.home , .playerData ul , .playerData  , .playerData li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home form{
+    width: 35%;
+    padding: 30px 0px;
+    display: flex;
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.home form input ,.home form button{ 
+    height: 40px;
+    padding: 2px 5px;
+    font-size: 17px;
+    border: none;
+    /* outline:1px solid gray; */
+    
+}
+.home form input{
+    width: 65%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.home form button{
+    width: 35%;
+    color: white;
+   background-color: rgb(102, 102, 102);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    
+}
+
+.playerData{
+    width: 70%;
+    box-shadow: 5px 5px 5px rgb(207, 206, 206);
+    
+}
+.playerData ul{
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    background-color: white;
+    /* border: 2px solid black; */
+    padding: 30px 0px;
+
+}
+.playerData li{
+    width: 48%;
+    /* border: 0.5px solid black; */
+    box-shadow: 5px 5px 5px rgb(241, 240, 240);
+    align-items: start;
+    margin: 1px;
+    font-size: 19px;
+    padding-left: 20px;
+    height: 35px;
+    transition: all 0.8s ease;
+}
+.playerData ul li:hover{
+    transform: translateY(4px);
+}
+
+.playerData ul button{
+    width: 20%;
+    height: 35px;
+    margin-top: 20px;
+    border-radius: 2px;
+    border: none;
+    background-color:rgb(102, 102, 102);
+    font-size: 19px;
+    color: white;
+    box-shadow: 5px 5px 5px rgb(244, 243, 243);
+}

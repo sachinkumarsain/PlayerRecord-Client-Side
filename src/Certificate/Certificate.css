@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.certi{
+    height: 100vh;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    
+}
+.mainCerti{
+    width: 80%;
+    height: 100%;
+    background: url(../images/Certificate.jpg) no-repeat scroll center / cover;
+}
