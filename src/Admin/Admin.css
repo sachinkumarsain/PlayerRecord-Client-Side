@@ -3,7 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.wapper{
+    background: linear-gradient(to right, #636FA4, #E8CBC0);
+    padding:40px 0;
+}
 .wapper , .wapper form{
     width: 100%;
     display: flex;
@@ -12,14 +15,42 @@
 }
 .wapper form{
     width: 50%;
-    padding:40px 20px;
-    
+   padding: 30px 15px;
+    background-color: white;
     flex-wrap: wrap;
 }
+.wapper form h1{
+margin: 10px 0px;
+width: 100%;
+text-align: center;
+font-size: 36px;
+}
+.wapper form p{
+    width: 100%;
+    text-align: center;
+    color:  #f7797d;
+    font-size: 17px;
+    
+}
+
 .wapper label , .wapper input , .wapper select{
     width: 50%;
     height: 40px;
+    font-size: 17px;
+    padding: 2px 5px;
+    border: none;
+    box-shadow: 5px 5px 5px rgb(231, 229, 229);
+    border-radius: 5px;
     margin-top: 10px;
+    transition: all 0.8s ease;
+}
+
+.wapper label{
+    box-shadow: none;
+}
+
+.wapper input:hover , .wapper select:hover{
+    transform: translateX(10px);
 }
 .wapper button{
     width: 20%;

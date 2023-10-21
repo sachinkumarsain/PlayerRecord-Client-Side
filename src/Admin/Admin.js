@@ -2,21 +2,32 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import "./Admin.css"
+import TypewriterWork from './typeWriter';
+
 
 function Admin() {
+
+
+
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+
   function onSubmit(data) {
     console.log(data);
     
-  // e.preventDefault()
     axios.post('http://localhost:8080/admin', {data}) 
       .then((result) => {
-        console.log(result.data);
+        if(result.status===200){
+          alert(result.data)
+        }
+        else if(result.status===202){
+          alert(result.data)
+        }
       });
   }
 
@@ -24,6 +35,8 @@ function Admin() {
     <div className='wapper'>
       
         <form onSubmit={handleSubmit(onSubmit)}>
+          <p><TypewriterWork/></p>
+          <h1>Wellcome to Player Record</h1>
 
           <label>Player Name</label>
           <input
@@ -37,13 +50,15 @@ function Admin() {
           <input
             type="text"
             placeholder="Enter Aadhar No."
-            {...register('aadharNo', { required: true })}
+            {...register('aadharNo', { required: true,
+             })}
           />
           {errors.aadharNo && <p role="alert">Aadhar No is required</p>}
 
           <label>Game</label>
           <select
-                    {...register('game', { required: true })}
+                    {
+                      ...register('game', { required: true, })}
                     >
                         <option>Select Game</option>
                         <option>Kabaddi</option>

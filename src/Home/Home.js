@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import "./Home.css"
 
 function Home() {
-
+  const nevigate = useNavigate();
   const [input, setInput] = useState("")
   const [playerData, setPlayerData] = useState([])
 
@@ -24,6 +25,10 @@ function Home() {
 
   }
 
+  function handleClick(){
+  nevigate("/certificate")
+  }
+
   return (
     <>
       <div className='home'>
@@ -36,7 +41,7 @@ function Home() {
           <button type='submit'>Search</button>
         </form>
         <div className='playerData'>
-          {
+          {   
             (Object.keys(playerData).length !== 0)
               ? <ul>
                 <li className='left'>serial Number</li>
@@ -62,9 +67,9 @@ function Home() {
                 <li className='left'>Action</li>
                 <li className='right'>{playerData.action}</li>
 
-                <button>Download</button>
+                <button onClick={handleClick}>Download</button>
               </ul>
-              : ""
+              : <h1>No Aadhar Match</h1>
 
           }
 
